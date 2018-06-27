@@ -1,0 +1,89 @@
+  Page Action 
+Browser Action 
+
+Page Action specific to pages 
+Browser Action -> Works wherever you are 
+
+
+Present UI 
+Add items to context menu (right click)
+Change the display of the pages 
+Override a default page 
+
+General Architecture 
+manifest.json file 
+Background page -> No UI -> Holds logic for our extension 
+Options Page 
+override Page -> Book Marker manager -> History Manager -> New page 
+Popup -> Page contained as a package 
+Content Script -> JavaScript injected to chrome 
+Arbitrary Pages
+
+
+Content Scripts 
+Interact with content loaded in the browser 
+Inspect Javascript into pages 
+Can be injected strings or files
+Javascript excites in the context of the page (process)
+Contwnr call functions defined by your extension (use messages instead) -> messages to communicate
+Content script not part of extension 
+
+
+Option pages
+Allows user to configure your extension 
+In your manifest file: “Option_page”:
+“options.html” 
+Use LocalStorage to save options 
+use chrome storage to save
+-> Supports the storage of objects 
+-> Data is synced with chrome Sync (Synchronize with all other chrome page)
+-> UI is provided by the option page -> not important 
+
+Override Manager 
+  overide 
+BookManger 
+new page (In new tab)
+History 
+
+Communication 
+extensions and various aspects communicate to each other
+use api to get references to various page -> Do
+Content Scripts communicate through simple messages API’s 
+Extensions can communicate with each other if they know their ID’s 
+
+Chrome API’s 
+Alarms -> Event fired (Based on criteria, Date, Time etc)
+Idle -> Browser idle or go from idle to active 
+omnibox -> Specific keywords after user enters it will start recording (keyboard events, keystrokes) events based on which we can react storage 
+Storage
+Tabs and windows 
+tts (text to speech ) 
+web request
+
+Security 
+Permission -> from user
+expressed in manifest json 
+keyword not match -> host Matching patterns 
+extension don’t run in incognito 
+
+Misc facts 
+Register a specific keyword for the omnibus a
+Background permission makes chrome start at login and run and after windows are closed    
+
+Context Menu
+Appears on some user interaction like clicking right mouse button. 
+needs to run in background and net when we click on the icon in toolbar -> We create an event page for the same to happen
+persisten = false means -> it is even page (Check manifest.json file)
+
+To know more about contexts -> Chrome developer webpage
+
+
+
+//Starting a project 
+chrome.browserAction.onClicked.addListner(Click);
+
+//content Scripts
+//runs in the context 
+//cannot use mot of the chrome API’s -> need to exchange messages between background or pop 
+ 
+

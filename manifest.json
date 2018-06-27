@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "linkedin Auto Adder",
+  "version": "1.0.0",
+  "description": "Automate your LinkedIn Task",
+  "icons": {
+     "128": "images/icon128.jpeg"
+  },
+
+  "page_action": {
+  	"default_Icon": "images/icon128.jpeg",
+  	"default_popup": "index.html",
+  	"default_title": "LinkedIn adder"
+  },
+
+    "background" : {
+      "scripts": ["Scripts/event.js"],
+      "persistent": false
+    },
+
+  "content_scripts" : [
+    {
+      "matches": ["https://linkedin.com/*"],
+      "js": ["Scripts/content.js"]
+    }
+  ],
+
+
+  "permissions": [
+    "tabs",
+    "https://linkedin.com/*"
+  ]
+
+}

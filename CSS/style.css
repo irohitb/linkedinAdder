@@ -1,0 +1,9 @@
+h2 {
+  font-size: 14px;
+  color: black;
+}
+
+.swipe {
+  display: inline-block;
+  width: 150px;
+}
