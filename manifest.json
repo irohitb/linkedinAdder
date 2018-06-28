@@ -4,23 +4,23 @@
   "version": "1.0.0",
   "description": "Automate your LinkedIn Task",
   "icons": {
-     "128": "images/icon128.jpeg"
+     "128": "images/icon128.png"
   },
 
   "page_action": {
-  	"default_Icon": "images/icon128.jpeg",
+  	"default_Icon": "images/icon128.png",
   	"default_popup": "index.html",
   	"default_title": "LinkedIn adder"
   },
 
     "background" : {
-      "scripts": ["Scripts/event.js"],
+      "scripts": ["Scripts/background.js"],
       "persistent": false
     },
 
   "content_scripts" : [
     {
-      "matches": ["https://linkedin.com/*"],
+      "matches": ["https://www.linkedin.com/*"],
       "js": ["Scripts/content.js"]
     }
   ],
@@ -28,7 +28,7 @@
 
   "permissions": [
     "tabs",
-    "https://linkedin.com/*"
+    "https://www.linkedin.com/*"
   ]
 
 }

@@ -1,16 +1,13 @@
-chrome.runtime.sendMessage({todo: “ShowPageAction”})
+chrome.runtime.sendMessage({todo:'ShowPageAction'});
 
-var NumInviteInPage = document.querySelectorAll('button[data-control-name="srp_profile_actions"]').length
 
+//request.todo == "startAdding" from App.js
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-if (request.odo == "startAdding") {
-  var NumInviteInPage = document.querySelectorAll('button[data-control-name="srp_profile_actions"]').length
-  var porfileSwipes = request.profiles
-  var messageToSend = request.message
-  var i = 0;
-
-
-      setTimeout(function() {
+  console.log("here")
+if (request.todo == "startAdding") {
+  console.log("here")
+}
+  /*    setTimeout(function() {
 
               setTimeout(function() {
               document.querySelectorAll('button[data-control-name="srp_profile_actions"]')[i].click()
@@ -26,7 +23,9 @@ if (request.odo == "startAdding") {
           console.log("game over")
         }
       }, 5500)
-    }
 
-  loopLimit(request.rightSwipe)
+*/
+if (request.urlUpdate== "Url-updated") {
+  console.log("here")
 }
+})
