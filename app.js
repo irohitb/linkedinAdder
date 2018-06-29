@@ -4,11 +4,10 @@ var message;
 document.getElementById("linkedin-start").addEventListener("click", function() {
 
   profiles = document.getElementById("LinkedIn-number").value
-
-    message = document.getElementById("LinkedIn-Message").innerHTML;
+  message = document.getElementById("LinkedIn-Message").value;
 
   console.log(profiles)
-  console.log(null)
+  console.log(message)
 
   if (profiles > 0 && message != null) {
     alert("Do not close, minimize and work on new tab while extension is working, Open new window to browse the web")
