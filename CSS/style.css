@@ -20,3 +20,10 @@ h2 {
   font weight: 100;
   font-size: 10px;
 }
+
+#linkedin-start, #linkedin-stop {
+  margin-right: 5px;
+  width: 80px;
+  margin-top: 5px;
+  margin-bottom: 6px;
+}
