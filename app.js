@@ -37,8 +37,7 @@ document.getElementById("linkedin-start").addEventListener("click", function() {
 document.getElementById("linkedin-stop").addEventListener("click", function() {
     chrome.tabs.query({active: true, currentWindow:true}, function(tabs) {
     chrome.tabs.sendMessage(tabs[0].id, {todo: "stopEverything"})
-    document.getElementById("linkedin-start").disabled = false;
-    document.getElementById("linkedin-stop").disabled = true;
+    stopSendingInvites();
   });
 });
 
@@ -59,22 +58,46 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     document.getElementById("linkedin-stop").style.display = "block"
     document.getElementById("linkedin-stop").disabled = false;
 
-    document.getElementById("InvitesSent").style.display = "block";
+    document.getElementById("totalInvitesToSend").style.display = "block"
+    document.getElementById("totalInvitesToSendS").innerHTML = request.numberOfConnectionsToBeAdded
+    document.getElementById("invitesSent").style.display = "block";
     document.getElementById("AddedNumber").innerHTML = request.connectionAdded
+    document.getElementById("invMessage").style.display = "block";
+    document.getElementById("invMessageS").innerHTML = request.message;
+    document.getElementById("currentlySendingM").style.display = "block";
+    document.getElementById("currentlySendingMS").innerHTML = request.FullName;
 
     document.getElementById("messageText").style.display="none";
     document.getElementById("numberText").style.display="none";
   }
   if (request.todo == 'stopped') {
-    document.getElementById("linkedin-start").disabled = false;
-    document.getElementById('LinkedIn-number').disabled = false;
-    document.getElementById("LinkedIn-Message").disabled = false;
-    document.getElementById("linkedin-stop").disabled = true;
-    document.getElementById("InvitesSent").style.display = "none";
-    document.getElementById("AddedNumber").value = "";
+    stopSendingInvites()
   }
 })
 
+function stopSendingInvites () {
+  document.getElementById('LinkedIn-number').style.display = "block";
+  document.getElementById("LinkedIn-Message").style.display = "block";
+
+  document.getElementById("instruction").style.display = "block";
+  document.getElementById("instruction1").style.display = "block";
+
+  document.getElementById("linkedin-start").style.display = "block";
+  document.getElementById("linkedin-stop").style.display = "none"
+  document.getElementById("linkedin-stop").disabled = true;
+
+  document.getElementById("totalInvitesToSend").style.display = "none"
+  document.getElementById("totalInvitesToSendS").innerHTML = "";
+  document.getElementById("invitesSent").style.display = "none";
+  document.getElementById("AddedNumber").innerHTML = "";
+  document.getElementById("invMessage").style.display = "none";
+  document.getElementById("invMessageS").innerHTML = "";
+  document.getElementById("currentlySendingM").style.display = "none";
+  document.getElementById("currentlySendingMS").innerHTML = "";
+
+  document.getElementById("messageText").style.display="block";
+  document.getElementById("numberText").style.display="block";
+}
 /*
 document.getElementById("LinkedIn-Message").placeholder = request.message;
 document.getElementById('LinkedIn-number').placeholder = request.numberOfConnectionsToBeAdded;

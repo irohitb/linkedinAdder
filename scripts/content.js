@@ -26,7 +26,7 @@ if (request.todo == "startAddingwithMessage") {
     var interval = setInterval(function(){
 
               setTimeout(function() {
-              chrome.runtime.sendMessage({todo:'running', connectionAdded:connectionAdded, message:message, numberOfConnectionsToBeAdded: numberOfConnectionsToBeAdded});
+              chrome.runtime.sendMessage({todo:'running', connectionAdded:connectionAdded, message:message, numberOfConnectionsToBeAdded: numberOfConnectionsToBeAdded, FullName:FullName  });
               i++;
               connectionAdded++;
               console.log(connectionAdded)
@@ -40,13 +40,13 @@ if (request.todo == "startAddingwithMessage") {
             }, 1200)
 
               setTimeout(function(){
-              chrome.runtime.sendMessage({todo:'running', connectionAdded:connectionAdded, message:message, numberOfConnectionsToBeAdded: numberOfConnectionsToBeAdded});
+              chrome.runtime.sendMessage({todo:'running', connectionAdded:connectionAdded, message:message, numberOfConnectionsToBeAdded: numberOfConnectionsToBeAdded, FullName:FullName  });
               document.querySelector('button[class="button-secondary-large mr1"]').click()
               document.getElementById('custom-message').value = message1;
             }, 1700)
 
             setTimeout(function(){
-            chrome.runtime.sendMessage({todo:'running', connectionAdded:connectionAdded, message:message, numberOfConnectionsToBeAdded: numberOfConnectionsToBeAdded});
+            chrome.runtime.sendMessage({todo:'running', connectionAdded:connectionAdded, message:message, numberOfConnectionsToBeAdded: numberOfConnectionsToBeAdded, FullName:FullName});
             document.querySelector('button[class="button-primary-large ml1"]').click()
           }, 2200)
 
