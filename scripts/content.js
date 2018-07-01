@@ -7,6 +7,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 if (request.todo == "startAddingwithMessage") {
 
+
     window.scrollTo(0,document.body.scrollHeight);
     var i = 0;
     var j = i+1
@@ -15,6 +16,7 @@ if (request.todo == "startAddingwithMessage") {
     var message1;
     var lengthoFConnectButton
     var FullName;
+    var btnr
 
     setTimeout(function() {
       lengthoFConnectButton =  document.querySelectorAll('button[data-control-name="srp_profile_actions"]').length
@@ -24,36 +26,43 @@ if (request.todo == "startAddingwithMessage") {
     var interval = setInterval(function(){
 
               setTimeout(function() {
+              chrome.runtime.sendMessage({todo:'running'});
               i++;
               j++;
               console.log(i)
               console.log(j)
               buttonA = document.querySelectorAll('button[data-control-name="srp_profile_actions"]')[i]
               buttonA = buttonA.getAttribute('aria-label');
-              buttonA = buttonA.split("Connect With ").pop();
+              console.log("this is buttonA")
               console.log(buttonA)
-              FullName = buttonA
+              btnr = buttonA.split("Connect with ").pop();
+              console.log("THis is btnr")
+              console.log(btnr)
+              FullName = btnr
+              console.log("THis is Full Name")
               console.log(FullName)
               const regex   = /\{FullName\}/gi;
               message1 = message.replace(regex, FullName)
               document.querySelectorAll('button[data-control-name="srp_profile_actions"]')[i].click()
-            }, 1000)
-
-              setTimeout(function(){
-                console.log(message1)
-              document.querySelector('button[class="button-secondary-large mr1"]').click()
-              document.getElementById('custom-message').value = message1;
             }, 2000)
 
+              setTimeout(function(){
+              chrome.runtime.sendMessage({todo:'running'});
+              console.log(message1)
+              document.querySelector('button[class="button-secondary-large mr1"]').click()
+              document.getElementById('custom-message').value = message1;
+            }, 6000)
+
             setTimeout(function(){
+                chrome.runtime.sendMessage({todo:'running'});
             document.querySelector('button[class="button-primary-large ml1"]').click()
-          }, 3000)
+          }, 7000)
 
           if (j == lengthoFConnectButton) {
             clearInterval(interval);
             }
 
-      }, 3500)
+      }, 8000)
 }
 
 

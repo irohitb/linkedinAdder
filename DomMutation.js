@@ -22,4 +22,8 @@ Mutation summary library
 //Detecting changes in URL
 
  /^https?:\/\/(www\.)?google\.(com|\w\w(\.\w\w)?)\/.*?[?#&]q=/;
- 
+
+//Errors and Tasks
+-> Connect with Problem
+-> State
+-> DOM mutation observer 
