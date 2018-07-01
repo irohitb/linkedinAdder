@@ -2,9 +2,10 @@ body {
   background: #1488cc; /* fallback for old browsers */
    background: -webkit-linear-gradient(to right, #1488cc, #2b32b2); /* Chrome 10-25, Safari 5.1-6 */
    background: linear-gradient(to right, #1488cc, #2b32b2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-color: white;
-width: 400px;
-}
+    color: white;
+    width: 400px;
+    height: 550px;
+  }
 
 h2 {
   font-size: 20px;
@@ -21,9 +22,21 @@ h2 {
   font-size: 10px;
 }
 
-#linkedinStart, #linkedinStop {
-  margin-right: 5px;
-  width: 80px;
-  margin-top: 5px;
-  margin-bottom: 6px;
+#linkedin-start {
+  text-align: center;
+  width: 240px;
+}
+
+#linkedin-stop {
+  width: 240px;
+  display: none;
+}
+
+#messageText, #numberText {
+  font-size: 18px;
+}
+
+#instruction, #instruction1 {
+  font-size: 12px;
+  color: #E0E0E0;
 }

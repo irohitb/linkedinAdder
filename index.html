@@ -15,17 +15,22 @@
         <img src="images/images.png" alt="LinkedIn Auto-Adder" width="70px" height="70px" class="img-linkedin text-center">
       </div>
       <div class="form-group">
-        <label for="usr">Number of People You want to add:</label>
-        <input class="form-control" type="number" placeholder="Number" id="LinkedIn-number">
+        <label for="usr" class="Number-class" id="numberText">*Number:</label>
+        <input class="form-control" type="number" placeholder="Enter the Number of People You want to add" id="LinkedIn-number">
       </div>
+      <h4 style="color:white; text-align:center; display:none;" id="InvitesSent">Number of Invites Sent: <span id="AddedNumber"> 0 </span> </h4>
       <div class="form-group">
-      <label for="Message">Message:</label>
-      <p class="instruction"> Using {FullName} will subsitute persons full name in your message for example: Hey {FullName}. Would you like joining my professional network? </p>
-      <textarea class="form-control" rows="5" maxlength="290"id="LinkedIn-Message"></textarea>
-      <p class="instruction">Important Note: Using this plugin to send too many invite in a day can get your account banned from using Linkedin. Do not send more than 30-50 invites at a single instance and not more than 300 in a single day. </p>
+        <label for="Message" id="messageText">Message:</label>
+        <p id="instruction"> Using {FullName} will subsitute persons full name in your message.  </p>
+        <textarea class="form-control" rows="5" maxlength="290"id="LinkedIn-Message" placeholder="Hey {FullName}. Would you like joining my professional network?"></textarea>
+        <p id="instruction1">Important: Read this article before using this plugin </p>
       </div>
-      <button type="button" class="btn btn-success" id="linkedin-start">Start</button>
-      <button type="button" class="btn btn-danger" id="linkedin-stop" disabled>Stop</button>
+      <div class="container">
+        <div class="row justify-content-center">
+          <button type="button" class="btn btn-success" id="linkedin-start">Start</button>
+          <button type="button" class="btn btn-danger" id="linkedin-stop" disabled>Stop</button>
+        </div>
+      </div>
     </div>
 
 
