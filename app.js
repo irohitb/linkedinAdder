@@ -45,7 +45,7 @@ document.getElementById("linkedin-stop").addEventListener("click", function() {
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.todo == 'running') {
-    console.log(request.connectionAdded)
+    var connectionAdded = request.connectionAdded - 1
 
     document.getElementById('LinkedIn-number').style.display = "none";
     document.getElementById("LinkedIn-Message").style.display = "none";
@@ -60,7 +60,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     document.getElementById("totalInvitesToSend").style.display = "block"
     document.getElementById("totalInvitesToSendS").innerHTML = request.numberOfConnectionsToBeAdded
     document.getElementById("invitesSent").style.display = "block";
-    document.getElementById("AddedNumber").innerHTML = request.connectionAdded
+    document.getElementById("AddedNumber").innerHTML = connectionAdded
     document.getElementById("invMessage").style.display = "block";
     document.getElementById("invMessageS").innerHTML = request.message;
     document.getElementById("currentlySendingM").style.display = "block";
@@ -75,6 +75,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 })
 
 function stopSendingInvites () {
+
   document.getElementById('LinkedIn-number').style.display = "block";
   document.getElementById("LinkedIn-Message").style.display = "block";
 

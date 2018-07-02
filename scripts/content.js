@@ -17,6 +17,14 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       var lengthoFConnectButton
       var FullName;
       var btnr
+      var nextPage = 0
+
+      function nextPage () {
+            nextPage++;
+            let x = document.getElementsByClassName("page-list")[0];
+            x = x.querySelectorAll('li')[nextPage]
+            x = x.querySelectorAll('button')[0].click()
+      }
 
       setTimeout(function() {
         lengthoFConnectButton =  document.querySelectorAll('button[data-control-name="srp_profile_actions"]').length
@@ -26,6 +34,16 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
         if (lengthoFConnectButton > numberOfConnectionsToBeAdded ) {
           lengthoFConnectButton = numberOfConnectionsToBeAdded;
+        }
+
+        if (connectionAdded == lengthoFConnectButton) {
+          if ( numberOfConnectionsToBeAdded > lengthoFConnectButton) {
+            clearInterval(interval);
+          } else {
+          alert("Action Complete")
+          chrome.runtime.sendMessage({todo:'stopped'});
+          clearInterval(interval);
+          }
         }
 
                 setTimeout(function() {
@@ -58,13 +76,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
               connectionAdded++;
             }, 2200)
 
-
-
-            if (connectionAdded == lengthoFConnectButton) {
-              chrome.runtime.sendMessage({todo:'stopped'});
-              clearInterval(interval);
-              }
-
               chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
               if (request.todo === "stopEverything") {
                 chrome.runtime.sendMessage({todo:'stopped'});
@@ -95,9 +106,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     setTimeout(function() {
       lengthoFConnectButton =  document.querySelectorAll('button[data-control-name="srp_profile_actions"]').length
     }, 700)
-    
-      setTimeout(function() {
-        i = 0;
+
+  var interval = setInterval(function(){
+
                 setTimeout(function() {
 
                   if (lengthoFConnectButton > numberOfConnectionsToBeAdded ) {
@@ -118,7 +129,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
                 setTimeout(function(){
                 chrome.runtime.sendMessage({todo:'running', connectionAdded:connectionAdded, message:message, numberOfConnectionsToBeAdded: numberOfConnectionsToBeAdded, FullName:FullName});
                 document.querySelector('button[class="button-primary-large ml1"]').click()
-                connectionAdded++
               }, 1500)
 
                 if (connectionAdded == lengthoFConnectButton) {
@@ -137,4 +147,20 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       }
 })
 
+
+<button data-ember-action="" data-ember-action-6289="6289" data-is-animating-click="true">2</button>
 //Hey! {FullName}. Looking forward to having you in my professional network
+<li class="page-list">
+      <ol>
+            <li class="active">1</li>
+            <li><button data-ember-action="" data-ember-action-8344="8344" data-is-animating-click="true">2</button></li>
+            <li><button data-ember-action="" data-ember-action-8346="8346">3</button></li>
+            <li><button data-ember-action="" data-ember-action-8348="8348">4</button></li>
+            <li><button data-ember-action="" data-ember-action-8350="8350">5</button></li>
+            <li><button data-ember-action="" data-ember-action-8352="8352">6</button></li>
+            <li><button data-ember-action="" data-ember-action-8354="8354">7</button></li>
+            <li><button data-ember-action="" data-ember-action-8356="8356">8</button></li>
+            <li><button data-ember-action="" data-ember-action-8358="8358">9</button></li>
+            <li><button data-ember-action="" data-ember-action-8360="8360">10</button></li>
+      </ol>
+    </li>
