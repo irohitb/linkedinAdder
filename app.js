@@ -1,3 +1,5 @@
+//If you are here then you are probably going through the code, I know this looks messy and I should have created functions :(
+
 var profiles;
 var message;
 
