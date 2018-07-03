@@ -37,7 +37,7 @@ h2 {
 }
 
 #instruction, #instruction1 {
-  font-size: 12px;
+  font-size: 10px;
   color: #E0E0E0;
 }
 
@@ -48,4 +48,48 @@ p {
 span {
   font-size: 14px;
   color: #E0E0E0;
+}
+
+.Disclaimer {
+  margin-top: 35px;
+  font-size: 10px;
+  color: #E0E0E0;
+  text-align: justify;
+}
+
+.friend {
+  margin-top: 30px;
+  font-size: 14px;
+  text-align: center;
+}
+
+i {
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  font-size: 20px;
+    padding: 7px;
+}
+
+.icon-class {
+  width: 99%;
+  text-align: center;
+
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+
+  color: black;
+}
+
+#instruction1 {
+  margin-top: 5px;
+}
+.clickHere {
+  text-decoration: underline; 
+
 }

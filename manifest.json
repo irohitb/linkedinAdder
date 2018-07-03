@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "linkedin Auto Adder",
+  "name": "linkedin Assist",
   "version": "1.0.0",
   "description": "Automate your LinkedIn Task",
   "icons": {
@@ -10,7 +10,7 @@
   "page_action": {
   	"default_Icon": "images/icon128.png",
   	"default_popup": "index.html",
-  	"default_title": "LinkedIn adder"
+  	"default_title": "linkedin Assist"
   },
 
     "background" : {
