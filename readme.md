@@ -2,6 +2,10 @@
 
 You need to manually add this to extensionn if you are downloading it from here or else you can download from chrome store 
 
+In Nutshell, for manually adding extension you need to do this 
+
+Open chrome -> Click on three dots on right hand upper side -> more tools --> extension --> Enable developers mode --> load unpacked plugin --> locate the parent folder containing all the files.
+
 https://chrome.google.com/webstore/detail/linkedin-assist/licnghallcjabmjidlijbacehcnifcpc
 
 
