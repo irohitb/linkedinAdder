@@ -4,7 +4,12 @@ You need to manually add this to extensionn if you are downloading it from here 
 
 In Nutshell, for manually adding extension you need to do this 
 
-Open chrome -> Click on three dots on right hand upper side -> more tools --> extension --> Enable developers mode --> load unpacked plugin --> locate the parent folder containing all the files.
+1.Open chrome
+2.Click on three dots on right hand upper side 
+3. More tools and then extension 
+4. Enable developers mode
+5. load unpacked plugin
+6. locate the parent folder containing all the files.
 
 https://chrome.google.com/webstore/detail/linkedin-assist/licnghallcjabmjidlijbacehcnifcpc
 
