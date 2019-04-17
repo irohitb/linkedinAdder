@@ -11,7 +11,7 @@ In Nutshell, for manually adding extension you need to do this
 5. load unpacked plugin
 6. locate the parent folder containing all the files.
 
-https://chrome.google.com/webstore/detail/linkedin-assist/licnghallcjabmjidlijbacehcnifcpc
+[Chrome Store Download link](https://chrome.google.com/webstore/detail/linkedin-assist/licnghallcjabmjidlijbacehcnifcpc)
 
 
 ## Future Update 
